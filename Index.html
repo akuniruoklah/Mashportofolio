@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen's Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            background-image: url('https://i.postimg.cc/0yV7w135/images-15.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1, h2, p {
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Home Page */
+        .home-page {
+            text-align: center;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+            opacity: 0.9;
+            background-color: rgba(128, 128, 128, 0.6);
+        }
+
+        .discord-photo {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .home-page h1, .home-page p {
+            background-color: rgba(128, 128, 128, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* About Me Page */
+        .about-page {
+            text-align: center;
+            background-color: rgba(128, 128, 128, 0.6);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+            background-image: url('https://i.postimg.cc/cHn32gJ6/images-16.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .motivational-quote {
+            font-style: italic;
+        }
+
+        .about-page p {
+            background-color: rgba(128, 128, 128, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Home Page -->
+    <div class="home-page" id="homePage">
+        <img src="https://i.postimg.cc/QCqFZpZN/images-12.jpg" alt="Discord Photo" class="discord-photo">
+        <h1 id="homeTitle">Zen (Mash)</h1>
+        <p id="homeSkills">Skill: Script, Build, Management</p>
+        <button onclick="showAboutMe()">About Me</button>
+    </div>
+
+    <!-- About Me Page -->
+    <div class="about-page" id="aboutPage" style="display: none;">
+        <p class="motivational-quote" id="quote">"Challenges are an opportunity to learn and grow. Always strive to give your best and never be afraid to try new things."</p>
+        <h2 id="aboutTitle">About Me</h2>
+        <p id="aboutText">My name is Zen, everyone calls me Mash because of my Discord display name. I'm from Indonesia, specifically from Jakarta. My hobbies are watching anime, running, and swimming. I am the 3rd Command at Site SHATTERED Reality and the Owner of Site Nexus, Area 51, Tower of Troll, and Blackout Operations. Although my building skills are still improving, I always try my best in Roblox Studio and SCP:RP.</p>
+        <button onclick="showHome()">Back to Home</button>
+    </div>
+
+    <script>
+        // Function to show the About Me page
+        function showAboutMe() {
+            document.getElementById('homePage').style.display = 'none';
+            document.getElementById('aboutPage').style.display = 'block';
+        }
+
+        // Function to show the Home page
+        function showHome() {
+            document.getElementById('aboutPage').style.display = 'none';
+            document.getElementById('homePage').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

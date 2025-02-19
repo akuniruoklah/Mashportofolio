@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,113 +7,120 @@
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             color: white;
-            background-image: url('https://i.postimg.cc/0yV7w135/images-15.jpg');
+            background-image: url('https://i.postimg.cc/q7Tqy9sn/deep-space-landscape-with-realistic-planets-elements-this-image-furnished-by-nasa-112293-524.jpg');
             background-size: cover;
             background-position: center;
-        }
+        }.container {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        position: relative;
+    }
 
-        h1, h2, p {
-            text-align: center;
-        }
+    .discord-photo {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
 
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
 
-        button:hover {
-            background-color: #45a049;
-        }
+    button:hover {
+        background-color: #45a049;
+    }
 
-        /* Home Page */
-        .home-page {
-            text-align: center;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-            opacity: 0.9;
-            background-color: rgba(128, 128, 128, 0.6);
-        }
+    .hidden {
+        display: none;
+    }
 
-        .discord-photo {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
+    /* Animation */
+    .fade-out {
+        animation: fadeOut 1s forwards;
+    }
 
-        .home-page h1, .home-page p {
-            background-color: rgba(128, 128, 128, 0.6);
-            padding: 10px;
-            border-radius: 5px;
-        }
+    .fade-in {
+        animation: fadeIn 1s forwards;
+    }
 
-        /* About Me Page */
-        .about-page {
-            text-align: center;
-            background-color: rgba(128, 128, 128, 0.6);
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-            background-image: url('https://i.postimg.cc/cHn32gJ6/images-16.jpg');
-            background-size: cover;
-            background-position: center;
-        }
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
 
-        .motivational-quote {
-            font-style: italic;
-        }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
 
-        .about-page p {
-            background-color: rgba(128, 128, 128, 0.6);
-            padding: 10px;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
-
-    <!-- Home Page -->
-    <div class="home-page" id="homePage">
+    <div class="container" id="homePage">
         <img src="https://i.postimg.cc/QCqFZpZN/images-12.jpg" alt="Discord Photo" class="discord-photo">
-        <h1 id="homeTitle">Zen (Mash)</h1>
-        <p id="homeSkills">Skill: Script, Build, Management</p>
-        <button onclick="showAboutMe()">About Me</button>
-    </div>
+        <h1>Zen (Mash)</h1>
+        <p>School: SMAN 2 Jakarta</p>
+        <p>Skills: Scripting, Building, Management</p>
+        <button onclick="showPage('aboutPage')">About Me</button>
+        <button onclick="showPage('projectsPage')">Projects</button>
+        <button onclick="showPage('skillsPage')">Skills</button>
+        <button onclick="showPage('othersPage')">Others</button>
+    </div><div class="container hidden" id="aboutPage">
+    <h2>About Me</h2>
+    <p>My name is Zen, also known as Mash. I am from Indonesia and currently studying at SMAN 2 Jakarta. My hobbies include watching anime, running, and swimming. I am the 3rd Command at Site SHATTERED Reality and the Owner of Site Nexus, Area 51, Tower of Troll, and Blackout Operations.</p>
+    <button onclick="showPage('homePage')">Back</button>
+</div>
 
-    <!-- About Me Page -->
-    <div class="about-page" id="aboutPage" style="display: none;">
-        <p class="motivational-quote" id="quote">"Challenges are an opportunity to learn and grow. Always strive to give your best and never be afraid to try new things."</p>
-        <h2 id="aboutTitle">About Me</h2>
-        <p id="aboutText">My name is Zen, everyone calls me Mash because of my Discord display name. I'm from Indonesia, specifically from Jakarta. My hobbies are watching anime, running, and swimming. I am the 3rd Command at Site SHATTERED Reality and the Owner of Site Nexus, Area 51, Tower of Troll, and Blackout Operations. Although my building skills are still improving, I always try my best in Roblox Studio and SCP:RP.</p>
-        <button onclick="showHome()">Back to Home</button>
-    </div>
+<div class="container hidden" id="projectsPage">
+    <h2>Projects</h2>
+    <p>Site Nexus, Site 24, Blackout Operations, Tower of Troll, and more.</p>
+    <button onclick="showPage('homePage')">Back</button>
+</div>
 
-    <script>
-        // Function to show the About Me page
-        function showAboutMe() {
-            document.getElementById('homePage').style.display = 'none';
-            document.getElementById('aboutPage').style.display = 'block';
-        }
+<div class="container hidden" id="skillsPage">
+    <h2>Skills</h2>
+    <p>Scripting, Building, Management in Roblox Studio and SCP:RP.</p>
+    <button onclick="showPage('homePage')">Back</button>
+</div>
 
-        // Function to show the Home page
-        function showHome() {
-            document.getElementById('aboutPage').style.display = 'none';
-            document.getElementById('homePage').style.display = 'block';
-        }
-    </script>
+<div class="container hidden" id="othersPage">
+    <h2>Others</h2>
+    <p>Want to collaborate on a game? DM me now!</p>
+    <button onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')">Mash Face </button>
+    <button onclick="showPage('homePage')">Back</button>
+</div>
+
+<script>
+    function showPage(pageId) {
+        const pages = document.querySelectorAll('.container');
+        pages.forEach(page => {
+            page.classList.add('fade-out');
+            setTimeout(() => page.classList.add('hidden'), 1000);
+        });
+        
+        setTimeout(() => {
+            document.getElementById(pageId).classList.remove('hidden');
+            document.getElementById(pageId).classList.add('fade-in');
+        }, 1000);
+    }
+</script>
 
 </body>
-</html>
+    </html>
